@@ -1,8 +1,12 @@
 {% extends 'Home/base.html' %}
 {% load static %}
 
-{% block BASE_CONTENIDO %}
 
+{% block BASE_CONTENIDO %}
+    {% block TITULO %}
+
+    {% endblock TITULO %}
+    
     {% block INDEX_CONTENIDO %}
 
         <!-- Header-->
@@ -25,20 +29,8 @@
 
         <!-- Features section-->
         {% include 'Home/features.html' %}
-
-        <!-- Pricing section-->
-        <section class="bg-light py-5 border-bottom">
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Los más vendidos</h2>
-                    <p class="lead mb-0">Estos son los productos más vendidos del mercado</p>
-                </div>
-            <div class="row gx-5 justify-content-center">
-            
-        <!-- Pricing card free-->
-        {% include 'Home/card.html' %}
-        
-
+                          
     {% endblock INDEX_CONTENIDO %}
 
 {% endblock BASE_CONTENIDO %}
+                    

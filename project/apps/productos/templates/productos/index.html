@@ -1,5 +1,17 @@
-{% extends 'Home/base.html' %}
+{% extends 'Home/index.html' %}
 
 {% block TITULO %}
-    <h1>Productos</h1>
+    <h1 class="display-5 fw-bolder text-dark mb-2 text-center">
+        Productos
+    </h1>
 {% endblock TITULO %}
+
+{% block INDEX_CONTENIDO %}
+
+    {% for producto in productos %}
+        <div class="row justify-content-center">
+              {% include 'Home/card.html' with card=producto.nombre card_categoria=producto.categoria card_precio=producto.precio card_descripcion=producto.descripcion%}  
+        </div>
+    {% endfor %}
+
+{% endblock INDEX_CONTENIDO %}

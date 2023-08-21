@@ -2,12 +2,13 @@
 <div class="col-lg-6 col-xl-4">
     <div class="card mb-5 mb-xl-0">
         <div class="card-body p-5">
-            <div class="small text-uppercase fw-bold text-muted">Mouse Logitech</div>
+            <div class="fs-4 text-uppercase fw-bold text-muted">{{ card }}</div>
             <div class="mb-3">
-                <span class="display-4 fw-bold">$100</span>
+                <p class="fw-bold fs-5 ">{{ card_categoria }}</p>
+                <span class="display-4 fw-bold">${{ card_precio }}</span>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius magnam saepe optio, ullam blanditiis libero provident atque quam adipisci quo autem minus sapiente qui ipsam voluptatem vel fugit reprehenderit alias.</p>
+                <p>{{ card_descripcion }}</p>
             </div>
             <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Comprar</a></div>
         </div>
