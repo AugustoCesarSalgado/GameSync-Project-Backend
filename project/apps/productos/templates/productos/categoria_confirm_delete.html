@@ -1,0 +1,16 @@
+{% extends 'productos/index.html' %}
+
+{% block TITULO %}
+    Eliminar Categoría
+{% endblock TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    
+    <p class="fs-5 fst-italic">¿Seguro que quiere eliminar "{{ object }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+
+{% endblock INDEX_CONTENIDO %}
