@@ -13,8 +13,8 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(models.Producto)
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'precio', 'cantidad', 'fecha_ingreso', 'descripcion', 'categoria',)
+    list_display = ('nombre', 'precio', 'cantidad', 'fecha_actualizacion', 'descripcion', 'categoria',)
     list_display_links = ('nombre',)
-    list_filter = ('nombre', 'precio', 'cantidad', 'fecha_ingreso', 'categoria',)
-    search_fields = ('nombre', 'precio', 'cantidad', 'fecha_ingreso', 'categoria',)
-    ordering = ('nombre', 'categoria', 'fecha_ingreso',)
+    list_filter = ('nombre', 'precio', 'cantidad', 'fecha_actualizacion', 'categoria',)
+    search_fields = ('nombre', 'precio', 'cantidad', 'fecha_actualizacion', 'categoria',)
+    ordering = ('nombre', 'categoria', 'fecha_actualizacion',)
