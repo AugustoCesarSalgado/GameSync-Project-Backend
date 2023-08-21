@@ -1,0 +1,18 @@
+{% extends 'productos/index.html' %}
+
+{% block TITULO %}
+    Detalle de Producto
+{% endblock TITULO %}
+
+{% block INDEX_CONTENIDO %}
+
+    <ul>
+        <li>Categoría: {{ object.categoria }} </li>
+        <li>Nombre: {{ object.nombre }} </li>
+        <li>Precio: {{ object.precio }} </li>
+        <li>Cantidad: {{ object.cantidad }} </li>
+        <li>Descripción: {{ object.descripcion }} </li>
+        <li>Fecha de Actualización: {{ object.fecha_actualizacion }} </li>
+    </ul>
+    
+{% endblock INDEX_CONTENIDO %}

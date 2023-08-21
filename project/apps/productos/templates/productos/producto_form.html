@@ -1,0 +1,15 @@
+{% extends 'productos/index.html' %}
+
+{% block TITULO %}
+    Crear/Actualizar Productos
+{% endblock TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+{% endblock INDEX_CONTENIDO %}
