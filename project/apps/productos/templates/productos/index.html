@@ -8,10 +8,29 @@
 
 {% block INDEX_CONTENIDO %}
 
-    {% for producto in productos %}
-        <div class="row justify-content-center">
-              {% include 'Home/card.html' with card=producto.nombre card_categoria=producto.categoria card_precio=producto.precio card_descripcion=producto.descripcion%}  
-        </div>
-    {% endfor %}
+    <h3 class="pb-lg-3">
+        Categorías
+    </h3>
+
+    <div class="d-grid gap-3">
+        {% if user.is_staff %}
+            <a href="{% url 'productos:categoria_create' %}" class="btn btn-primary">Crear una nueva Categoría</a>
+            <br>
+        {% endif %}
+        <a href="{% url 'productos:categoria_list' %}" class="btn btn-primary">Listar Categorías</a>
+        <br>
+    </div>
+
+    <h3 class="pb-lg-3">
+        Productos
+    </h3>
+
+    <div class="d-grid gap-3">
+        {% if user.is_staff %}
+            <a href="{% url 'productos:producto_create' %}" class="btn btn-primary">Crear un nuevo Producto</a>
+            <br>
+        {% endif %}
+        <a href="{% url 'productos:producto_list' %}" class="btn btn-primary">Listar Productos</a>
+    </div>
 
 {% endblock INDEX_CONTENIDO %}
