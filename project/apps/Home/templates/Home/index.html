@@ -18,8 +18,12 @@
                             <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido a GamerSync</h1>
                             <p class="lead text-white-50 mb-4">Aquí podras encontrar accesorios para tu set-up, los perifericos que usan los mejores del mundo y componentes para tu pc</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            {% if user.is_authenticated %}
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Home:about' %}">Sobre Mi</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="{% url 'Home:register' %}">Registrar Vendedor</a> 
+                            {% else %}   
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Home:login' %}">Iniciar Sesión</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="{% url 'Home:register' %}">Registrarse</a>
+                            {% endif %}
                             </div>
                         </div>
                     </div>
