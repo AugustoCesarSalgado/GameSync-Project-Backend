@@ -14,6 +14,7 @@ from . import models, forms
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     productos_registrados = Producto.objects.all()
     context = {'productos': productos_registrados}
