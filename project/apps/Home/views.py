@@ -1,7 +1,10 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.admin.views.decorators import staff_member_required
-from django.http import HttpRequest, HttpResponse
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.http import HttpResponse
+from django.http.request import HttpRequest
+from django.shortcuts import render
 
 from . import forms
 
@@ -20,9 +23,9 @@ def login_request(request: HttpRequest) -> HttpResponse:
             if user is not None:
                 login(request, user)
                 return render(request, 'Home/index.html', {'mensaje': 'Has iniciado sesión correctamente'})
-        else:
-            form = forms.CustomAtuhenticationForm()
-        return render(request, 'Home/login.html', {'form': form})
+    else:
+        form = forms.CustomAtuhenticationForm()
+    return render(request, 'Home/login.html', {'form': form})
     
 
 #Registro
@@ -34,7 +37,7 @@ def register(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             username = form.cleaned_data["username"]
             form.save()
-            return render(request, "Home/index.html", {"mensaje": "Vendedor creado 😊"})
+            return render(request, "Home/index.html", {"mensaje": "Vendedor creado"})
     else:
         form = forms.CustomUserCreationForm()
     return render(request, "Home/register.html", {"form": form})
